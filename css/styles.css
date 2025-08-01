@@ -131,6 +131,10 @@ header {
   line-height: var(--font-lineheight-0);
 }
 
+.contact {
+  font-size: var(--font-size-4);
+}
+
 .hero-message > div:last-child {
   color: var(--primary);
 }
@@ -150,6 +154,9 @@ header {
   display: grid;
   gap: var(--size-1);
   padding-inline-start: 18px;
+  > li {
+    font-size: var(--font-size-3);
+  }
 }
 
 .checkmark-list {
@@ -208,7 +215,6 @@ h3 {
   padding-block: var(--size-2);
   scroll-padding-inline: 5vmin;
   gap: var(--size-2);
-
   > img {
     height: 400px;
     width: 100%;
