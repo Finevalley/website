@@ -220,3 +220,7 @@ h3 {
     scroll-snap-align: center;
   }
 }
+
+span.bt {
+  display: none;
+}
