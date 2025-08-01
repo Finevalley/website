@@ -1,1 +1,217 @@
-#bg{background:url(../images/bg.jpg)no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}#copyright{background:#222;color:#999;padding-top:20px;padding-bottom:15px}#specialist{color:#777}#logo{margin-top:16px}#suppliers{background:#fff;margin-top:36px}#sectionpanels{margin-top:36px}body{padding-top:70px;padding-bottom:50px}.anchor{display:block;height:70px;margin-top:-70px;visibility:hidden}.tab{margin-left:18px}.nav{padding-top:22px}.navbar{margin-bottom:0}.modal-dialog{max-width:410px}#logo{height:40px}#nhs{height:16px}
+@import "open-props.min.css";
+@import "normalize.min.css";
+
+/* the following switch imports have selectors that enable the override of the system setting */
+@import "theme.light.switch.min.css";
+@import "theme.dark.switch.min.css";
+
+:root {
+  background: white;
+  --primary: #005EB8;
+  --secondary: #009639 ;
+  scrollbar-color: var(--primary) transparent;
+}
+
+@media (max-width: 980px) {
+  h1 {
+    font-size: var(--font-size-7);
+  }
+
+  h2 {
+    font-size: var(--font-size-6);
+  }
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: var(--font-size-6);
+  }
+
+  h2 {
+    font-size: var(--font-size-5);
+  }
+
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-5);
+  width: min(100% , 1200px);
+  margin-inline:  auto;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-5);
+  margin-left: var(--size-4);
+}
+
+@media (min-width: 800px) {
+  main {
+    margin-left: var(--size-8);
+  }
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-4);
+}
+
+footer {
+  display: grid;
+  gap: var(--size-4);
+  margin-block: var(--size-4);
+  place-items: center;
+  color: var(--text-2);
+  text-align: center;
+}
+
+/**
+ * Grid
+ * Minimal grid system with auto-layout columns
+ */
+.grid {
+  grid-column-gap: var(--size-8);
+  grid-row-gap: var(--size-5);
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 800px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
+  }
+}
+.grid > * {
+  min-width: 0;
+}
+
+.fg {
+  color: var(--text-1);
+}
+
+.primary {
+  color: var(--primary);
+}
+
+.secondary {
+  color: var(--secondary);
+}
+
+header {
+  background: white;
+  align-items: center;
+  margin-left: var(--size-4);
+}
+
+@media (min-width: 800px) {
+  header {
+    margin-left: var(--size-8);
+  }
+}
+
+@media (max-width: 800px) {
+  .promo-art {
+    margin-left: calc(var(--size-8) * -1);
+  }
+}
+
+.hero {
+  margin-top: var(--size-4);
+  display: grid;
+  gap: var(--size-5);
+}
+
+.hero-message {
+  display: grid;
+  grid-template-columns: max-content;
+  color: var(--text-1);
+  line-height: var(--font-lineheight-0);
+}
+
+.hero-message > div:last-child {
+  color: var(--primary);
+}
+
+.under-hero {
+  color: var(--text-2);
+  font-size: var(--font-size-4);
+  margin-block-end: var(--size-3);
+}
+
+.promo-art {
+  align-self: stretch;
+}
+
+.client-list {
+  stroke: var(--primary);
+  display: grid;
+  gap: var(--size-1);
+  padding-inline-start: 18px;
+}
+
+.checkmark-list {
+  list-style-type: none;
+  stroke: var(--primary);
+  align-self: flex-start;
+  display: grid;
+  gap: var(--size-2);  
+  font-size: var(--font-size-fluid-1);
+  padding-inline-start: 0;
+}
+
+.checkmark-list > li {flex-shrink: 0;}
+
+.checkmark-list > li > div {
+  display: flex;
+  flex-direction: row;
+  gap: var(--size-2);
+  align-items: center;
+}
+
+.checkmark-list > li > div > svg {flex-shrink: 0;}
+
+h1>* {
+  opacity: 0;
+  animation: var(--animation-fade-in) forwards,var(--animation-slide-in-up) forwards;
+  animation-timing-function: var(--ease-out-5);
+  animation-delay: .5s;
+  font-size: var(--font-size-9);
+}
+
+h1>*:last-child {
+  animation-delay: .6s;
+}
+
+.checkmark-list>li {
+  display: flex;
+  align-items: center;
+  gap: var(--size-3);
+  padding-inline-start: 0;
+}
+
+.promo-art > img {
+  block-size: 100%;
+  object-fit: cover;
+}
+
+h3 {
+  font-size: var(--font-size-4);
+}
+
+.carousel {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  display: flex;
+  padding-block: var(--size-2);
+  scroll-padding-inline: 5vmin;
+  gap: var(--size-2);
+
+  > img {
+    height: 400px;
+    width: 100%;
+    scroll-snap-align: center;
+  }
+}
